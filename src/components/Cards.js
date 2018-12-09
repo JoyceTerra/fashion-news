@@ -12,7 +12,6 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import Icon from '@material-ui/core/Icon';
@@ -61,7 +60,6 @@ class Cards extends React.Component {
         <CardHeader
           action={
             <IconButton>
-              <MoreVertIcon />
             </IconButton>
           }
           title={newsArticle.title}
@@ -78,10 +76,7 @@ class Cards extends React.Component {
           </Typography>
         </CardContent>
         <CardActions className={classes.actions} disableActionSpacing>
-        <Fab variant="extended" aria-label="Delete" className={classes.fab}>
-        <NavigationIcon className={classes.extendedIcon} />
-        Extended
-      </Fab>
+
           <IconButton
             className={classnames(classes.expand, {
               [classes.expandOpen]: this.state.expanded,
