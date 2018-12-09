@@ -9,6 +9,7 @@ const query = `
             url
             imageUrl
             createdAt
+            id
         }
     }
 `;
