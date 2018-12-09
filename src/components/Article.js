@@ -6,7 +6,8 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import IconButton from '@material-ui/core/IconButton';
 import { withRouter } from 'react-router-dom';
-import { slugify } from '../utils';
+import { slugify } from '../utils'
+
 
 const styles = theme => ({
   card: {
@@ -44,16 +45,16 @@ class Article extends React.Component {
   render() {
     const { classes, DEFAULT_IMAGE, newsArticle } = this.props
     return (
-      <Card className={classes.card}>
+      <Card className={classes.card} >
         <CardHeader
-					onClick={this.handleOpen}
-					action={<IconButton />}
-					className={classes.title}
-					title={newsArticle.title}
-					subheader={new Date(newsArticle.createdAt).toDateString()}
-				/>
-        <CardMedia
-        	onClick={this.handleOpen}
+          onClick={this.handleOpen}
+          action={<IconButton />}
+          className={classes.title}
+          title={newsArticle.title}
+          subheader={new Date(newsArticle.createdAt).toDateString()}
+         />
+         <CardMedia
+           onClick={this.handleOpen}
           className={classes.media}
           image={ newsArticle.imageUrl || DEFAULT_IMAGE}
           title={newsArticle.title}
