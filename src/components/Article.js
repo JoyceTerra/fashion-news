@@ -4,12 +4,9 @@ import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
 import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import Dialog from './Dialog';
 import { withRouter } from 'react-router-dom';
-
+import { slugify } from '../utils';
 
 const styles = theme => ({
   card: {
@@ -39,38 +36,28 @@ const styles = theme => ({
 });
 
 class Article extends React.Component {
-  state = { open: false };
-
-  handleExpandClick = () => {
-    this.setState(state => ({ open: !state.open }));
-    this.props.history.push(`/${this.props.newsArticle.id}`)
-  };
+  handleOpen = () => {
+		let { newsArticle } = this.props;
+		this.props.history.push(`/${slugify(newsArticle.title, newsArticle.id)}`);
+	};
 
   render() {
     const { classes, DEFAULT_IMAGE, newsArticle } = this.props
-    let { open } = this.state;
-
     return (
       <Card className={classes.card}>
         <CardHeader
-					onClick={this.handleExpandClick}
+					onClick={this.handleOpen}
 					action={<IconButton />}
 					className={classes.title}
 					title={newsArticle.title}
 					subheader={new Date(newsArticle.createdAt).toDateString()}
 				/>
         <CardMedia
-        	onClick={this.handleExpandClick}
+        	onClick={this.handleOpen}
           className={classes.media}
           image={ newsArticle.imageUrl || DEFAULT_IMAGE}
           title={newsArticle.title}
         />
-        <CardContent>
-          <Typography component="p">
-          {newsArticle.description}
-          </Typography>
-        </CardContent>
-        <Dialog open={open} handleClose={this.handleExpandClick} />
       </Card>
     );
   }
