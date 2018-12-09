@@ -6,6 +6,7 @@ fashionunitedNlNewsArticles(keywords: $keywords) {
                 title
                 url
                 imageUrl
+                createdAt
         }
     }
 `;
