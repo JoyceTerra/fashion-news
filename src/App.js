@@ -3,7 +3,11 @@ import getNewsArticles from "./getNewsArticles";
 // import CardsContainer from "./components/CardsContainer"
 import Button from '@material-ui/core/Button';
 import classnames from 'classnames';
-import Cards from "./components/Cards"
+import Articles from './components/Articles';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import classnames from 'classnames';
+
+
 
 const DEFAULT_IMAGE =
   "https://fashionunited.info/global-assets/img/default/fu-default_1200x630_black-favicon.jpg";
@@ -40,11 +44,20 @@ loadMore = () => {
   })
 }
 
+
   render() {
     
     return (
       <div className="App">
         <h1>Fashion News</h1>
+        <div>
+					<Router>
+						<div>
+							<Route path="/" render={props => <Articles {...props} newsArticles={this.state.newsArticles} />} />
+							<Route path="/:id" render={props => <Articles {...props} newsArticles={this.state.newsArticles} />} />
+						</div>
+					</Router>
+				</div>
         <div>{this.newsArticles()}</div>
         <Button onClick={this.loadMore} variant="contained" color="primary" className={classnames.button}>
         Load More
