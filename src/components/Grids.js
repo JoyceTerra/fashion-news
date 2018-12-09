@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Cards from './Cards';
+import Article from './Article';
 
 
 const styles = theme => ({
@@ -39,7 +39,7 @@ class Grids extends React.Component {
           <Grid container className={classes.demo} justify="center" spacing={Number(spacing)}>
             {[0, 1, 2].map(value => (
               <Grid key={value} item>
-                <Cards/>
+                <Article/>
               </Grid>
             ))}
           </Grid>

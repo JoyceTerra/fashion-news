@@ -33,27 +33,20 @@ class FullScreenDialog extends React.Component {
 		return (
 			<div>
 				<Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
-					<AppBar className={classes.appBar}>
 						<Toolbar>
 							<IconButton color="inherit" onClick={handleClose} aria-label="Close">
 								<CloseIcon />
 							</IconButton>
-							<Typography variant="h6" color="inherit" className={classes.flex}>
+							{/* <Typography variant="h6" color="inherit" className={classes.flex}>
 								Sound
-							</Typography>
+							</Typography> */}
 							<Button color="inherit" onClick={handleClose}>
-								save
+								{/* save */}
 							</Button>
 						</Toolbar>
-					</AppBar>
+					
 					<List>
-						<ListItem button>
-							<ListItemText primary="Phone ringtone" secondary="Titania" />
-						</ListItem>
-						<Divider />
-						<ListItem button>
-							<ListItemText primary="Default notification ringtone" secondary="Tethys" />
-						</ListItem>
+						
 					</List>
 				</Dialog>
 			</div>

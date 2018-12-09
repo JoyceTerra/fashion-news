@@ -16,9 +16,9 @@ function Header(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="default">
+      <AppBar position="static" color="default"  style={{ marginBottom: 15 }}>
         <Toolbar>
-          <Typography variant="h6" color="inherit">
+          <Typography variant="h4" color="inherit">
             Fashion United
           </Typography>
         </Toolbar>
