@@ -1,8 +1,8 @@
-## Fashion News App
+# Fashion News App
 Deployed version: https://cranky-morse-700337.netlify.com/
 
 or
 
-# yarn install
+## yarn install
  and
-# yarn start
+## yarn start
