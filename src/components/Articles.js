@@ -14,9 +14,6 @@ const styles = theme => ({
 	},
 	control: {
 	  padding: theme.spacing.unit * 2,
-	},
-	wrap: {
-
 	}
   });
 class Articles extends Component {
@@ -28,16 +25,15 @@ class Articles extends Component {
 		const { spacing } = this.state
 
 return(
-					<Grid container  spacing={40} style={{padding: 24}}>
-							 {this.props.newsArticles.map((newsArticle, index) => (
+	<Grid container  spacing={40} style={{padding: 24}}>
+		 {this.props.newsArticles.map((newsArticle, index) => (
+		<Grid item key={index} >
+			<Article DEFAULT_IMAGE={this.props.DEFAULT_IMAGE} newsArticle={newsArticle} index={index} />
+		</Grid>
+	 ))}
+	</Grid>
+	)}
 
-						<Grid item key={index} >
-							<Article DEFAULT_IMAGE={this.props.DEFAULT_IMAGE} newsArticle={newsArticle} index={index} />
-						</Grid>
-	 )	 )}
-					</Grid>
-	)
-							 }
 	render() {
 		return <div>{this.newsArticles()}</div>
 	}

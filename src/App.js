@@ -6,6 +6,7 @@ import Articles from './components/Articles';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/Header'
 import Dialog from './components/Dialog'
+import Grid from '@material-ui/core/Grid';
 
 
 const DEFAULT_IMAGE = 'https://fashionunited.info/global-assets/img/default/fu-default_1200x630_black-favicon.jpg';
@@ -13,7 +14,7 @@ const DEFAULT_IMAGE = 'https://fashionunited.info/global-assets/img/default/fu-d
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { newsArticles: undefined, limit: 10, open: false };
+    this.state = { newsArticles: undefined, limit: 12, open: false };
   }
 
   async componentWillMount() {
@@ -34,7 +35,7 @@ class App extends Component {
  
   loadMore = () => {
     let { limit } = this.state;
-    this.setState({ limit: limit + 10 }, () => {
+    this.setState({ limit: limit + 12 }, () => {
       this.getArticles()
     })
   }
@@ -51,9 +52,13 @@ class App extends Component {
 						</div>
 					</Router>
 				</div>
-        <Button onClick={this.loadMore} variant="contained" color="primary" className={classnames.button}>
-        Load More
-      </Button>
+        <Grid container justify="center">
+          <Grid item >
+            <Button onClick={this.loadMore} variant="outlined" color="primary" className={classnames.button}>
+              Load More
+          </Button>
+        </Grid>
+      </Grid>
       </div>
     ) : (
       'Loading'
