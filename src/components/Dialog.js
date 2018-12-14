@@ -41,7 +41,7 @@ class FullScreenDialog extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({ newsArticle: this.props.newsArticles.filter(article => article.id === getId(this.props.match.params.id))[0] });
+        this.setState({ newsArticle: this.props.newsArticles.filter(article => article.id == getId(this.props.match.params.id))[0] });
     }
     render() {
         const { classes, open, DEFAULT_IMAGE } = this.props;
